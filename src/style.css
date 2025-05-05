@@ -1,0 +1,223 @@
+html * {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    padding: 20px;
+    margin: 0;
+    font-family: "Exo 2", sans-serif;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 24px;
+    text-align: center;
+}
+
+.mainmenu__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px gray solid;
+    display: flex;
+}
+
+.mainmenu li {
+    list-style: none;
+}
+
+.mainmenu__link {
+    display: block;
+    padding: 10px 25px;
+    color: #000;
+    text-decoration: none;
+}
+
+.mainmenu__link:hover {
+    text-decoration: none;
+    background-color: darkgray;
+    color: #fff;
+}
+
+.mainmenu__link.active {
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.content {
+    max-width: fit-content;
+    padding: 1.5em 0;
+    margin: auto;
+
+}
+
+
+.blue {
+    width: 500px;
+    height: 200px;
+    background-color: aquamarine;
+}
+
+.hidden {
+    display: none;
+}
+
+.levelIcons {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.levelIcon {
+    width: 50px;
+    height: 50px;
+    background-color: gainsboro;
+    border-radius: 15%;
+    border: 2px dashed darkgray;
+    color: whitesmoke;
+    font-size: 30px;
+}
+
+.playfield {
+    width: max-content;
+    height: max-content;
+    background-color: rgb(72, 110, 124);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    position: relative;
+
+}
+
+a.levelIcon {
+    text-decoration: none;
+    text-align: center;
+}
+
+.element1,
+.element2,
+.element3,
+.element0,
+.element4,
+.bomb1,
+.bomb2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 5px;
+    text-align: center;
+    position: relative;
+    /* Важно для абсолютного позиционирования */
+    transition: transform 0.3s ease;
+    will-change: transform;
+    /* Время и анимация перестановки */
+    z-index: 1;
+    /* Обеспечиваем, что элементы отображаются поверх друг друга при перемещении */
+    /* Плавное изменение прозрачности */
+
+}
+
+.invisible {
+
+    opacity: 0;
+    pointer-events: none;
+    /* Предотвращает взаимодействие с элементом после исчезновения */
+}
+
+.element1 {
+    background-color: aqua;
+
+}
+
+.element2 {
+    background-color: magenta;
+}
+
+.element3 {
+    background-color: yellow;
+}
+
+.element0 {
+    background-color: greenyellow;
+}
+
+.element4 {
+    background-color: rgb(167, 167, 167);
+}
+
+.falling {
+    /* position: absolute; */
+    position: relative;
+    /* transform: scale(0.00001); */
+    z-index: 2;
+    transition: transform 0.3s ease-in-out;
+}
+
+.red {
+    /* background-color: rgb(145, 145, 245); */
+    animation: uuu 2s ease-out forwards;
+}
+
+
+
+.grid-item.moving {
+    z-index: 2;
+    /* Элемент, который двигается, должен быть выше */
+}
+
+.bomb2 {
+    background-color: rgb(255, 0, 0);
+}
+
+.bomb1 {
+    background-color: rgb(255, 140, 8);
+}
+
+@keyframes fakeExplosion {
+    0% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+
+
+
+@keyframes uuu {
+    0% {
+        background-color: green;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+
+
+
+
+.KABOOM {
+    animation: fakeExplosion 0.5s ease-out forwards;
+}
+
+.locked{
+    background-color: rgb(0, 76, 42);
+    pointer-events: none;
+}
