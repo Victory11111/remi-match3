@@ -5,9 +5,10 @@ module.exports = {
   
   entry: './src/index.js', // наша стартовая точка
   output: {
-    filename: 'main.js', // как назовётся собранный файл
-    path: path.resolve(__dirname, 'dist'), // куда положить
-    clean: true // очищать старые файлы
+    filename: 'main.js', 
+    path: path.resolve(__dirname, 'dist'), 
+    publicPath: '', 
+    clean: true 
   },
   mode: 'development',
   devServer: {
